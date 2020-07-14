@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>@yield('title','Aristaeus by Infocam')</title>
+    <title>@yield('title', config('app.name') )</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -40,10 +40,10 @@
                 <div class="tab-pane active" id="studio">
                     <div class="row">
                         <div class="col-md-6">
-                            <!--<a class="navbar-brand" href="{{ url('register')}}">Aristaeus by InfoCam </a>-->
-                            <a href="{{ url('/') }}">
+                            <a class="navbar-brand" href="{{ url('/')}}">{{ config('app.name') }} </a>
+                            <!--<a href="{{ url('/') }}">
                             <img src="{{asset('img/logo2.jpeg')}}" alt="" class="float-right img-raised img-circle img-fluid"  width="150" height="150">
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>

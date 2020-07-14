@@ -1,0 +1,5 @@
+commit 42cee873c63faa526c75bde1f4bd8fbd26170c03
+Author: Mario Campos <mcampos@infocam.com.ar>
+Date:   Sat Jul 11 19:43:05 2020 -0300
+
+    Proyecto Base

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Bienvenido a Aristaeus by Infocam')
+@section('title','Bienvenido a '. config('app.name'))
 
 @section('body-class','landing-page')
 
@@ -21,6 +21,44 @@
             display: flex;
             flex-direction: column;
         }
+
+        .tt-query, /* UPDATE: newer versions use tt-input instead of tt-query */
+        .tt-hint {
+            width: 396px;
+            height: 30px;
+            padding: 8px 12px;
+            font-size: 24px;
+            line-height: 30px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            }
+
+         .tt-query {
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+             -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        }
+
+        .tt-hint {
+              color: #999
+            }
+
+            .tt-menu {    /* used to be tt-dropdown-menu in older versions */
+              width: 222px;
+              margin-top: 4px;
+              padding: 4px 0;
+              background-color: #fff;
+              border: 1px solid #ccc;
+              border: 1px solid rgba(0, 0, 0, 0.2);
+              -webkit-border-radius: 4px;
+                 -moz-border-radius: 4px;
+                      border-radius: 4px;
+              -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+                 -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+                      box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            }
+
     </style>
 
 @endsection
@@ -32,7 +70,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="title">Bienvenido a Mario's.</h1>
+                <h1 class="title">Bienvenido a {{ config('app.name') }}</h1>
                 <h4>Horneando la mejor pizza en Salta desde 1996.!!"</h4>
                 <h4>Making the best pizza in town since 1996"</h4>
                 <br />
@@ -156,7 +194,7 @@
               datumTokenizer: Bloodhound.tokenizers.whitespace,
               queryTokenizer: Bloodhound.tokenizers.whitespace,
               // `states` is an array of state names defined in "The Basics"
-              local: ['hola','prueba1','prueba2','hola2','abcde']
+              prefetch: '{{ url("/products/json")}}'
             });
 
             $('#search').typeahead({

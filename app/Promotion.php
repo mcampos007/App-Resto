@@ -24,6 +24,6 @@ class Promotion extends Model
     		return $featuredImage->url;
     	}
     	//Default
-    	return 'images/products/default.jpg';
+    	return '/images/products/default.jpg';
     }
 }

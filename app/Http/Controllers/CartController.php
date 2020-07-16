@@ -73,16 +73,15 @@ class CartController extends Controller
     public function update()
     {
         //
-        $client = auth()->user() ;
+         $client = auth()->user() ;
          $cart = $client->cart;
          $cart->status = 'Pending';
          $cart->order_date = Carbon::now();
          $cart->save();
          
-         $admins = User::where('admin',true)->get();
-         dd(admins);
+         $admins = User::where('admin',true)->get()->pluck('email');
          mail::to($admins)->send(new NewOrder($client, $cart));
-
+         
          $notification = "Tu comanda ya fué confirmada";
 
          return back()->with(compact('notification'));

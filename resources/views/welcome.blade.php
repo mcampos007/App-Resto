@@ -84,21 +84,19 @@
 </div>
 
 <div class="main main-raised">
-    <div class="container">
-        <div class="section text-center section-landing">
+    <div class="container">        
+        <!-- <div class="section text-center section-landing">
             <div class="team">
                 <h2 class="title">Nuestras Promociones</h2>
                 <div class="row">
                     @foreach($promotions as $promotion)
                     <div class="col-md-4">
-                        <!-- <div class="info"> -->
-                            <div class="team-player">
-                                <img src="{{ $promotion->featured_image_url }}" alt="Thumbnail Image" class="img-raised img-circle"width="200" height="200">   
-                                <h4 class="title">{{ $promotion->name }} <br />
-                                </h4>
-                                <p class="description">{{ $promotion->description }}</p>                     
-                            </div>
-                        <!-- </div> -->
+                        <div class="team-player">
+                            <img src="{{ $promotion->featured_image_url }}" alt="Thumbnail Image" class="img-raised img-circle"width="200" height="200">   
+                            <h4 class="title">{{ $promotion->name }} <br />
+                            </h4>
+                            <p class="description">{{ $promotion->description }}</p>                     
+                        </div>
                     </div>
                     @endforeach
                 </div>
@@ -106,9 +104,7 @@
                     {{ $promotions->links()}}
                 </div>
             </div>
-        </div>        
-<!--     </div>       
-    <div class="container"> -->
+        </div> -->        
         <div class="section text-center">
             <h2 class="title">Todo lo que tenemos para vos</h2>
             <form class="form-inline" method="get" action="{{ url('search')}}">
@@ -122,6 +118,7 @@
                     @foreach($categories as $category)
                     <div class="col-md-4">
                         <div class="team-player">
+
                             <img src="{{ $category->featured_Image_url }}" alt="Imágen de la Categoria" class="img-raised img-circle">
                             
                             <h4 class="title">

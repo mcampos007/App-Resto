@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="profile">
                     <div class="avatar">
-                        <img src=" {{ $category->featured_Image_url }} " alt="Imágen de la Categoria {{ $category->name }}" class="img-circle img-responsive img-raised">
+                        <img src=" {{ url($category->featured_Image_url) }} " alt="Imágen de la Categoria {{ $category->name }}" class="img-circle img-responsive img-raised">
                     </div>
 
                     <div class="name">
@@ -62,7 +62,7 @@
                     @foreach($products as $product)
                     <div class="col-md-4">
                         <div class="team-player">
-                            <img src="{{ $product->featured_image_url }}" alt="Thumbnail Image" class="img-raised img-circle">
+                            <img src="{{ url($product->featured_image_url) }}" alt="Thumbnail Image" class="img-raised img-circle">
                             
                             <h4 class="title">
                                 <a href="{{ url('/products/'.$product->id) }}">{{ $product->name }}    </a>

@@ -87,7 +87,6 @@ return [
         'address' => env('MAIL_FROM_ADDRESS', 'aristaeus@infocam.com.ar'),
         'name' => env('MAIL_FROM_NAME', 'Trattoria Mario'."'s"),
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

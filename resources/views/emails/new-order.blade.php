@@ -24,8 +24,22 @@
 			{{ $cart->order_date }}
 		</li>
 	</ul>
+	<hr>
+	<p>Detalles del Pedido</p>
+	<hr>
+	<ul>
+		@foreach($cart->details as $detail)
+		<li>
+			{{ $detail->product->name }} x {{ $detail->quantity }}
+			($ {{ $detail->quantity * $detail->product->price }})
+		</li>
+		@endforeach
+	</ul>
 	<p>
-		<a href=" url('/admin/orders/'.$cart->id)">Haz clic aquí</a>
+		<strong>El Importe Total del Pedido es {{ $cart->total }} </strong>
+	</p>
+	<p>
+		<a href=" {{ url('/admin/orders/'.$cart->id) }}">Haz clic aquí</a>
 		para ver mas información sobre este pedido.
 	</p>
 </body>
